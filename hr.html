@@ -10,7 +10,7 @@
 	<link rel="stylesheet" href="/css/style.css">
 	<img src="/images/LOGO2.png" width=350>
 
-
+	
 </head>
 
 <body class="img js-fullheight" style="background-image: url(images/photo.jpg);" dir="rtl">
@@ -25,35 +25,33 @@
 				<div class="col-md-6 col-lg-4">
 					<div class="login-wrap p-0">
 						<h3 class="mb-4 text-center"></h3>
-						<form action="/hr" method="POST" class="signin-form">
+						<form action="/hr" method="POST" class="signin-form" >
 							<div class="form-group">
-								<input type="text" class="form-control" name="firstname" placeholder="שם פרטי" required>
+								<input type="text" class="form-control" name="firstname" placeholder="שם פרטי" pattern="[א-ת]+" title="אנא הזן אותיות א-ת בלבד" required />
 							</div>
 							<div class="form-group">
-								<input type="text" class="form-control" name="secondname" placeholder="שם משפחה" required>
+								<input type="text" class="form-control" name="secondname" placeholder="שם משפחה" pattern="[א-ת]+" title="אנא הזן אותיות א-ת בלבד" required />
 							</div>
 							<div class="form-group">
-								<input type="text" class="form-control" name="email" placeholder="מייל" required>
+								<input type="text" class="form-control" name="email"  placeholder="מייל" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" title="אנא הזן כתובת מייל תקינה"required />
 							</div>
 							<div class="form-group">
-								<input type="text" class="form-control" name="companyname"  placeholder="שם חברה" required>
+								<input type="text" class="form-control" name="companyname" id="companyname" placeholder="שם חברה" pattern="[א-ת]+" title="אנא הזן אותיות א-ת בלבד" required />
 							</div>
 							<div class="form-group">
-								<input type="text" class="form-control"name="phone" placeholder="טלפון" required>
+								<input type="text" class="form-control" name="phone"  placeholder="טלפון" pattern="05?[0-9]-?[0-9]{7}" title="אנא הזן מספר סלולרי תקין"required />
 							</div>
 							<div class="form-group">
-								<input type="secuity" class="form-control" name="security" placeholder="שאלת אבטחה: שם אמך?" required>
+								<input type="secuity" class="form-control" name="security" placeholder="שאלת אבטחה: שם אמך?" pattern="[א-ת]+" title="אנא הזן אותיות א-ת בלבד" required />
 							</div>
 							<div class="form-group">
-								<input id="password-field" type="password" name="password" class="form-control" placeholder="סיסמה"
-									required>
+								<input id="password-field" type="password" name="password" id="password" class="form-control" placeholder="סיסמה" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,12}" title="הסיסמא חייבת להכיל לפחות אות קטנה אחת, אות גדולה אחת (אנגלית) ומספר אחד. 6-12 תווים" required />
 							</div>
 
 							<div class="form-group" style="text-align:right;">
 								<input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
-								<label for="agree-term" class="label-agree-term"><span><span></span></span> קבלת
-									קורות
-									חיים ועדכונים במייל </label>
+								<label for="agree-term" class="label-agree-term"><span></span> קבלת
+									קורות חיים ועדכונים במייל </label>
 							</div>
 
 							<div class="form-group">
