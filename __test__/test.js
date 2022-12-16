@@ -1,6 +1,10 @@
 
+const { agent } = require("supertest");
 const request = require("supertest");
 const app = require("../app");
+const mongoose = require( 'mongoose' )
+mongoose.Promise = global.Promise
+
 
 describe("Test the root path", () => {
     test("It should response the GET method", done => {
@@ -14,8 +18,12 @@ describe("Test the root path", () => {
 });
 
 
+//Test Sign Up
+
+
+//Student sign up
 describe("POST /student", () => {
-    it("Should be status code 200", async () => {
+    it("Should be respond 'New user created successfuly'", async () => {
         const newUser = await request(app).post("/student").send({
             firstname: 'ofek',
             secondname: 'biton',
@@ -28,9 +36,12 @@ describe("POST /student", () => {
     });
 });
 
+
+
+//HR sign up
 describe("POST /hr", () => {
-    it("Should be status code 200", async () => {
-        const newUser = await request(app).post("/student").send({
+    it("Should be respond 'New user created successfuly'", async () => {
+        const newUser = await request(app).post("/hr").send({
             firstname: 'gal',
             secondname: 'yossef',//json.toString(req.body.birthdate),
             email: 'galyossef15@gmail.com',
@@ -38,41 +49,63 @@ describe("POST /hr", () => {
             phone: '0544676374',
             security: 'ilanit',
             password: '123',
-           
+
         });
         expect(newUser.statusCode).toBe(302);
     });
 });
 
+
+//Test Login
+//login hr
 describe("POST /login", () => {
-    it("Should responde 'login ok'", async () => {
-        const student = await request(app).post("/login").send({
-            email: 'roie@gmail.com',
-            password: '1234567a',
+    it("Should be respond 'log in hr successfuly'", async () => {
+        const hr = await request(app).get("/login").send({
+            email: 'ofekbiton120200@gmail.com',
+            password: 'Ofek1234',
         });
-        expect(student.statusCode).toBe(200);
+        expect(200);
+        expect((res) => {
+            expect(res.body.email).toBe("ofekbiton120200@gmail.com");
+            expect(res.body.password).toBe("Ofek1234");
+        })
+
     });
 });
 
+//login agent
 describe("POST /login", () => {
-    it("Should responde 'login ok'", async () => {
-        const student = await request(app).post("/login").send({
-            email: 'talrefaelov@gmail.com',
-            password: '1234554321',
+    it("Should be respond 'log in agents successfuly'", async () => {
+        const agent = await request(app).get("/login").send({
+            email: 'shir@gmail.com',
+            password: 'Shir1234',
         });
-        expect(student.statusCode).toBe(200);
+        expect(200);
+        expect((res) => {
+            expect(res.body.email).toBe("shir@gmail.com");
+            expect(res.body.password).toBe("Shir1234");
+        })
+
     });
 });
 
+
+//login student
 describe("POST /login", () => {
-    it("Should responde 'login ok'", async () => {
-        const student = await request(app).post("/login").send({
-            email: 'shoham@gmail.com',
-            password: '1',
+    it("Should be respond 'log in student successfuly'", async () => {
+        const student = await request(app).get("/login").send({
+            email: 'yoni@gmail.com',
+            password: '123Yoni',
         });
-        expect(student.statusCode).toBe(200);
+        expect(200);
+        expect((res) => {
+            expect(res.body.email).toBe("yoni@gmail.com");
+            expect(res.body.password).toBe("123Yoni");
+        })
+
     });
 });
+
 
 
 
