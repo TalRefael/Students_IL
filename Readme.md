@@ -29,7 +29,7 @@ Run the application with the following command:
 ```java script
 $ node app
 ```
-Then to open the website on your computer press here:
+### Then to open the website on your computer press here:
 [Students_IL Website](http://localhost:3000/)
 
 ## Website
