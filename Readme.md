@@ -4,7 +4,7 @@ This file will describe how to install the necessary libraries to run the site.
 
 ## Installation
 
-Install the package.json with NPM:
+Install the libraries with NPM:
 
 ```bush
 $ npm install
