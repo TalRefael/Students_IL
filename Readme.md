@@ -34,3 +34,6 @@ Then to open the website on your computer write:
 ```java script
 https:// localhost:3000
 ```
+## Website
+When all i successful you will be able to see the home page.
+<img width="960" alt="צילום מסך_20230114_122633" src="https://user-images.githubusercontent.com/119854317/212467491-abe1c6c8-d3f9-4225-9833-068e91ae7753.png">
